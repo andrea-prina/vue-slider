@@ -36,7 +36,7 @@ const app = new Vue(
 
             slideElements : slides,
 
-            slideIndex : 0
+            activeSlideIndex : 0
 
         },
 
@@ -44,24 +44,29 @@ const app = new Vue(
 
             increaseIndex : function(){
                 
-                if (this.slideIndex < this.slideElements.length - 1){
-                    this.slideIndex++;
+                if (this.activeSlideIndex < this.slideElements.length - 1){
+                    this.activeSlideIndex++;
                 
                 } else {
-                    this.slideIndex = 0;
+                    this.activeSlideIndex = 0;
 
                 }
             },
 
             decreaseIndex : function(){
                 
-                if (this.slideIndex > 0){
-                    this.slideIndex--;
+                if (this.activeSlideIndex > 0){
+                    this.activeSlideIndex--;
                 
                 } else {
-                    this.slideIndex = this.slideElements.length - 1;
+                    this.activeSlideIndex = this.slideElements.length - 1;
 
                 }
+            },
+
+            setActiveIndex : function(index){
+
+                this.activeSlideIndex = index;
             }
         }
     }
