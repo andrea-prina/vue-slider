@@ -37,6 +37,7 @@ const app = new Vue(
             slideElements : slides,
 
             slideIndex : 0
+
         },
 
         methods : {
@@ -45,11 +46,9 @@ const app = new Vue(
                 
                 if (this.slideIndex < this.slideElements.length - 1){
                     this.slideIndex++;
-                    console.log(this.slideIndex);
                 
                 } else {
                     this.slideIndex = 0;
-                    console.log(this.slideIndex);
 
                 }
             },
@@ -58,11 +57,9 @@ const app = new Vue(
                 
                 if (this.slideIndex > 0){
                     this.slideIndex--;
-                    console.log(this.slideIndex);
                 
                 } else {
                     this.slideIndex = this.slideElements.length - 1;
-                    console.log(this.slideIndex);
 
                 }
             }
