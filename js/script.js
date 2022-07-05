@@ -27,3 +27,45 @@ const slides = [
 ];
 
 console.log(slides);
+
+const app = new Vue(
+    {
+        el : '#app',
+
+        data : {
+
+            slideElements : slides,
+
+            slideIndex : 0
+        },
+
+        methods : {
+
+            increaseIndex : function(){
+                
+                if (this.slideIndex < this.slideElements.length - 1){
+                    this.slideIndex++;
+                    console.log(this.slideIndex);
+                
+                } else {
+                    this.slideIndex = 0;
+                    console.log(this.slideIndex);
+
+                }
+            },
+
+            decreaseIndex : function(){
+                
+                if (this.slideIndex > 0){
+                    this.slideIndex--;
+                    console.log(this.slideIndex);
+                
+                } else {
+                    this.slideIndex = this.slideElements.length - 1;
+                    console.log(this.slideIndex);
+
+                }
+            }
+        }
+    }
+)
