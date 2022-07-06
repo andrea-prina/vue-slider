@@ -36,7 +36,9 @@ const app = new Vue(
 
             slideElements : slides,
 
-            activeSlideIndex : 0
+            activeSlideIndex : 0,
+
+            autoPlay : null
 
         },
 
@@ -67,7 +69,26 @@ const app = new Vue(
             setActiveIndex : function(index){
 
                 this.activeSlideIndex = index;
+            },
+
+            startAutoPlay : function(){
+
+                if (this.autoPlay === null){
+                    this.autoPlay = setInterval(() => {
+                        this.increaseIndex();
+                        }, 3000);
+                }
+            },
+            
+            stopAutoPlay: function(){
+
+                clearInterval(this.autoPlay);
+                this.autoPlay = null;
             }
+        },
+
+        created(){
+            this.startAutoPlay();
         }
     }
 )
